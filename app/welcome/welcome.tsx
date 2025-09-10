@@ -68,7 +68,7 @@ const resources = [
     ),
   },
   {
-    href: "https://discord.gg/BxXMcwwG",
+    href: "https://discord.com/invite/TKQn6RWaGX",
     text: "Leave the Question or Message in Discord",
     icon: (
       <svg
