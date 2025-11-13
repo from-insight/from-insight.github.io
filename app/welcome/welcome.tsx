@@ -13,7 +13,7 @@ export function Welcome() {
               className="block w-full dark:hidden"
             />
             <img
-              src={logoDark}
+              src={logoLight}
               alt="From-Insight"
               className="hidden w-full dark:block"
             />
