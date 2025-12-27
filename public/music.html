@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>RE:BOOT Concert Poster Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* --- CSS 변수 설정 (색상 테마) --- */
+:root {
+    --bg-color: #050505; /* 딥 블랙 */
+    --neon-lime: #39FF14; /* 핵심 네온 라임 */
+    --text-white: #E0E0E0;
+    --glitch-cyan: #00FFFF;
+    --glitch-magenta: #FF00FF;
+    --page-width: auto;
+    --page-height: 1188px;
+}
+
+/* --- 기본 리셋 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222; /* 브라우저 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: 'Source Code Pro', monospace; /* 기본 코딩 폰트 */
+}
+
+/* 포스터 전체 컨테이너 (두 페이지 나란히 보기용) */
+.poster-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 개별 페이지 공통 스타일 */
+.poster-page {
+    width: var(--page-width);
+    height: var(--page-height);
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+    border: 1px solid #1a1a1a;
+}
+
+/* 유틸리티 클래스: 네온 텍스트 색상 */
+.text-lime { color: var(--neon-lime); }
+
+/* =========================================
+   PAGE 1: 표지 (Cover) 스타일
+   ========================================= */
+.page-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 40px;
+    /* 디지털 노이즈 배경 패턴 시뮬레이션 */
+    background-image:
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 4px),
+        radial-gradient(circle at center, #111 0%, #000 80%);
+}
+
+/* 상단 터미널 헤더 */
+.p1-header {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* 메인 콘텐츠 영역 (이미지 + 타이틀) */
+.p1-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 글리치 이미지 플레이스홀더 (실제 이미지 대신 느낌 구현) */
+.glitch-image-placeholder {
+    width: 80%;
+    height: 400px;
+    background: linear-gradient(45deg, #000, #1a1a1a);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 2px solid #222;
+}
+/* 스캔라인 효과 */
+.glitch-image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(0deg, rgba(57, 255, 20, 0.05) 0px, transparent 2px);
+    pointer-events: none;
+}
+/* 실루엣 느낌의 내부 박스 */
+.silhouette-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    height: 70%;
+    background: var(--bg-color);
+    /* 네온 테두리 및 빛 번짐 */
+    box-shadow: 0 0 20px var(--neon-lime), inset 0 0 20px var(--neon-lime);
+    opacity: 0.7;
+    clip-path: polygon(10% 0, 90% 0, 100% 80%, 85% 100%, 15% 100%, 0 80%); /* 추상적 형태 */
+}
+
+/* 메인 타이틀 (RE:BOOT) */
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13rem;
+    line-height: 1;
+    font-weight: 900;
+    text-align: center;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    /* 글리치 텍스트 효과 (RGB 분리) */
+    text-shadow:
+        3px 0px 0px var(--glitch-cyan),
+        -3px 0px 0px var(--glitch-magenta),
+        0 0 30px var(--neon-lime); /* 기본 네온 글로우 */
+    animation: textGlitch 2s infinite alternate-reverse;
+}
+
+/* 타이틀 글리치 애니메이션 */
+@keyframes textGlitch {
+    0% { text-shadow: 3px 0px 0px var(--glitch-cyan), -3px 0px 0px var(--glitch-magenta), 0 0 30px var(--neon-lime); }
+    98% { text-shadow: 3px 0px 0px var(--glitch-cyan), -3px 0px 0px var(--glitch-magenta), 0 0 30px var(--neon-lime); }
+    99% { text-shadow: -5px 2px 0px var(--glitch-cyan), 5px -2px 0px var(--glitch-magenta), 0 0 50px var(--neon-lime); transform: skewX(5deg); }
+    100% { text-shadow: 3px 0px 0px var(--glitch-cyan), -3px 0px 0px var(--glitch-magenta), 0 0 30px var(--neon-lime); transform: skewX(0deg); }
+}
+
+
+/* 하단 로딩 섹션 */
+.p1-footer {
+    margin-top: auto;
+}
+
+.loading-container {
+    margin-bottom: 20px;
+}
+
+.loading-bar-frame {
+    width: 100%;
+    height: 30px;
+    border: 2px solid var(--neon-lime);
+    padding: 4px;
+    box-shadow: 0 0 15px var(--neon-lime);
+}
+
+.loading-bar-fill {
+    width: 99%; /* 99% 설정 */
+    height: 100%;
+    background-color: var(--neon-lime);
+    box-shadow: inset 0 0 10px var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+/* 로딩바 내부 광택 효과 animation */
+.loading-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: loadingShine 2s infinite;
+}
+@keyframes loadingShine {
+    100% { left: 100%; }
+}
+
+.loading-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.blink-cursor { animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.concert-info {
+    text-align: right;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    width: 80%;
+}
+
+/* =========================================
+   PAGE 2: 프로그램 (Program) 스타일
+   ========================================= */
+.page-2 {
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    /* 미세한 스캔라인 배경 */
+    background-image: repeating-linear-gradient(0deg, rgba(57, 255, 20, 0.03) 0px, transparent 2px);
+}
+
+.code-header {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.program-container {
+    flex-grow: 1;
+    font-size: 1.25rem; /* 폰트 크기 조정 */
+}
+
+/* 프로그램 섹션 타이틀 (PHASE) */
+.phase-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px var(--neon-lime);
+}
+
+/* 개별 트랙 스타일 */
+.track-entry {
+    margin-bottom: 25px;
+}
+
+.track-id {
+    color: var(--text-white);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.track-data {
+    color: #aaa;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+/* 데이터 내 강조 색상 */
+.data-key { color: var(--neon-lime); }
+.data-val { color: var(--text-white); }
+
+/* 형광색 구분선 */
+.code-separator {
+    height: 2px;
+    background-color: var(--neon-lime);
+    border: none;
+    margin: 15px 0;
+    box-shadow: 0 0 10px var(--neon-lime);
+    position: relative;
+}
+/* 구분선 끝에 장식 점 */
+.code-separator::before, .code-separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px; height: 6px;
+    background-color: var(--neon-lime);
+    box-shadow: 0 0 10px var(--neon-lime);
+}
+.code-separator::before { left: 0; }
+.code-separator::after { right: 0; }
+
+
+.intermission-log {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    border: 1px dashed var(--neon-lime);
+    padding: 20px;
+}
+
+.code-footer {
+    margin-top: auto;
+    font-size: 1rem;
+    opacity: 0.6;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="poster-container">
+
+    <div class="poster-page page-1">
+        <header class="p1-header" >
+            <p> > SYSTEM_CHECK // <span style="color: red;">2025_YEAR_END_CONCERT</span></p>
+            <p>> INITIATING NEW_YEAR_SEQUENCE...</p>                    
+        </header>
+
+        <main class="p1-main-content">            
+            <h2 style="text-align: right; margin: 0; color: var(--neon-lime); font-size: 2rem;">RE:BOOT</h2>
+            <div class="glitch-image-placeholder">                
+                <div class="silhouette-box"></div>
+                <h1 class="main-title">RE:BOOT</h1>
+            </div>
+            <div class="concert-info">
+                <p>2025.12.28(SUN) 2PM | Anton Hall </p>
+            </div>
+        </main>
+
+        <footer class="p1-footer">
+            <div class="loading-container">
+                <div class="loading-bar-frame">
+                    <div class="loading-bar-fill"></div>
+                </div>
+                <div class="loading-text">
+                    <span>[█████████████████████░] 99%</span>
+                    <span class="text-lime">> SYSTEM READY. PRESS ANY KEY TO START<span class="blink-cursor">_</span></span>                    
+                </div>
+                <br>
+                <br>
+                <div>
+                    <p>> LOGIN: AUDIENCE_MEMBER</p>
+                    <p>> ACCESSING PROGRAM DATA... SUCCESS.</p>       
+                    <p>> . . . <span class="blink-cursor">_</span></p>    
+                </div>                
+            </div>
+        </footer>
+    </div>
+
+
+    <div class="poster-page page-2">
+        <header class="code-header">
+             <p class="text-lime">> WARNING : ENERGY_LEVEL_CRITICAL!</p>    
+            <p>> PHASE_01 : SYSTEM_RESTORE </p>   
+            <p>> PHASE_02 : REBOOT_COMPLETE (열정과 에너지)</p>  
+        </header>
+
+        <main class="program-container">
+            <div style="text-align: left;" class="intermission-log">                                    
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_01] :: Caprice No.20 in D major</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Vn.권수정</span>, <span class="data-key">Composer:</span> <span class="data-val"> N.Paganini</span> }</p>
+                </div>
+                
+                 <div class="track-entry">
+                    <p class="track-id">[TRACK_02] :: Salut d'Amour Op.12</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Vc.황근호 Pf.권수정</span>, <span class="data-key">Composer:</span> <span class="data-val">E.Elgar</span> }</p>
+                </div>
+                
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_03] :: Piano Sonata in D major K.119 (L.415)</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.박준호</span>, <span class="data-key">Composer:</span> <span class="data-val">D.Scarlatti</span> }</p>
+                </div>                
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_04] :: Violin Sonata in C minor No.3 Mov.2</p>                    
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Vn.강아미 Pf.박준호</span>, <span class="data-key">Composer:</span> <span class="data-val">E.Grieg</span> }</p>
+                </div>
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_05] :: 차르다시 (Csárdás)</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Vn.권수정 Pf.정인지</span>, <span class="data-key">Composer:</span> <span class="data-val">V.Monti</span> }</p>
+                </div>                                
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_06] :: Piano Sonata No.2 in F# minor Op.2, Mov.4</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.박준호</span>, <span class="data-key">Composer:</span> <span class="data-val">J.Brahms</span> }</p>
+                </div>                
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_07] :: Rondo in C major Op.51, No.1</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.박재윤</span>, <span class="data-key">Composer:</span> <span class="data-val">L.v.Beethoven</span> }</p>
+                </div>                
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_08] :: Sonatina in F major Op.36 No.4 </p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.박재윤</span>, <span class="data-key">Composer:</span> <span class="data-val">M.Clementi</span> }</p>
+                </div>   
+
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_09] :: Rondo a capriccio Op.129 | Rage over a lost penny</p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.강아미</span>, <span class="data-key">Composer:</span> <span class="data-val">L.v.Beethoven</span> }</p>
+                </div>      
+                
+                <div class="track-entry">
+                    <p class="track-id">[TRACK_10] :: Ballade No.1 Op.23 </p>
+                    <p class="track-data">$ARTIST_DATA { <span class="data-key">Artists:</span> <span class="data-val">Pf.정인지</span>, <span class="data-key">Composer:</span> <span class="data-val">F.Chopin</span> }</p>
+                </div>
+            </div>                                
+        </main>
+
+        <footer class="code-footer">
+            <p>> ※ PROGRAM_DATA SUBJECT TO CHANGE W/O NOTICE.</p>
+            <p>> END_OF_LOG.</p>            
+            <p>> PRESS ANY KEY TO CONTINUE...</p>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>
