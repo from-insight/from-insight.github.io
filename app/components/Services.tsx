@@ -87,13 +87,13 @@ export function Services() {
 
       {/* Cards grid */}
       <motion.div
+        className="services-grid"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "1px",
           background: "#ecdcd5",
           border: "1px solid #ecdcd5",

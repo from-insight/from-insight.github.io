@@ -1,5 +1,6 @@
 import { useViewportText } from "~/hooks/useViewportText";
 import { motion } from "framer-motion";
+import logoImage from "~/welcome/frominsight_ci.png";
 
 export function Hero() {
   const fromSize = useViewportText("FROM", "Syne", "900", 0.88);
@@ -9,12 +10,12 @@ export function Hero() {
     <section
       id="hero"
       style={{
-        minHeight: "100vh",
+        minHeight: "clamp(680px, 84vh, 920px)",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "flex-start",
-        padding: "0 5vw",
+        padding: "5.5rem 5vw 2.5rem",
         position: "relative",
         overflow: "hidden",
       }}
@@ -51,6 +52,29 @@ export function Hero() {
       <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
         {/* Canvas-fill headline — each word fills viewport width */}
         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.22, ease: "easeOut" }}
+          style={{
+            marginTop: "1.25rem",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src={logoImage}
+            alt="from-insight corporate identity"
+            style={{
+              display: "block",
+              width: "clamp(88px, 10vw, 132px)",
+              height: "auto",              
+            }}
+          />
+        </motion.div>
+        
+        
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -78,6 +102,8 @@ export function Hero() {
         >
           <div
             style={{
+              display: "inline-block",
+              width: "max-content",
               fontFamily: "Syne, sans-serif",
               fontWeight: 900,
               fontSize: `${insightSize}px`,
@@ -93,7 +119,7 @@ export function Hero() {
           >
             INSIGHT
           </div>
-        </motion.div>
+        </motion.div>        
 
         {/* Subtitle */}
         <motion.div

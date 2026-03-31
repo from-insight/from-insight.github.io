@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useViewportText } from "~/hooks/useViewportText";
 
 export function Community() {
-  const joinSize = useViewportText("JOIN US", "Syne", "900", 0.7);
+  const joinSize = useViewportText("JOIN US", "Syne", "900", 0.54);
 
   return (
     <section
@@ -41,7 +41,7 @@ export function Community() {
           style={{
             fontFamily: "JetBrains Mono, monospace",
             fontSize: "0.75rem",
-            color: "#f44250",
+            color: "#9053e6",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: "1.5rem",
@@ -59,12 +59,14 @@ export function Community() {
         >
           <div
             style={{
+              display: "inline-block",
+              width: "max-content",
               fontFamily: "Syne, sans-serif",
               fontWeight: 900,
               fontSize: `${joinSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              background: "linear-gradient(135deg, #f44250 0%, #ff8a7a 100%)",
+              background: "linear-gradient(135deg, #592e94 20%, #9053e6 90%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -107,7 +109,7 @@ export function Community() {
             alignItems: "center",
             gap: "0.6rem",
             padding: "0.9rem 2.5rem",
-            background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+            background: "linear-gradient(135deg, #4f1e93 20%, #9053e6 90%)",
             color: "#fffdfb",
             fontFamily: "Inter, sans-serif",
             fontWeight: 700,

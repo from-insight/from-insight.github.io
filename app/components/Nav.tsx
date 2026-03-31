@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import logoImage from "~/welcome/frominsight_ci.png";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,15 +42,7 @@ export function Nav() {
           gap: "0.55rem",
         }}
       >
-        <img
-          src={logoImage}
-          alt="from-insight"
-          style={{
-            display: "block",
-            height: "26px",
-            width: "auto",
-          }}
-        />
+        
         <span
           style={{
             fontFamily: "Syne, sans-serif",
