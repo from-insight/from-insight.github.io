@@ -31,9 +31,9 @@
     }
   },
   "reactRouterConfig": {
-    "appDirectory": "/Users/newbom/Documents/codes/3_from-insight/frominhome/app",
+    "appDirectory": "/Users/newbom/Documents/codes/3_from-insight/oldone/app",
     "basename": "/",
-    "buildDirectory": "/Users/newbom/Documents/codes/3_from-insight/frominhome/build",
+    "buildDirectory": "/Users/newbom/Documents/codes/3_from-insight/oldone/build",
     "future": {
       "unstable_optimizeDeps": false,
       "unstable_passThroughRequests": false,
