@@ -8,7 +8,6 @@
 
 # React Router
 /.react-router/
-/build/
 /t_.claude/
 /.github/
 /k8s/
