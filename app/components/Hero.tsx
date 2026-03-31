@@ -26,7 +26,7 @@ export function Hero() {
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(31,31,31,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(31,31,31,0.5) 1px, transparent 1px)",
+            "linear-gradient(rgba(236,220,213,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(236,220,213,0.75) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
           maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
           WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
@@ -43,7 +43,7 @@ export function Hero() {
           width: "600px",
           height: "400px",
           background:
-            "radial-gradient(ellipse, rgba(124,58,237,0.15) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(244,66,80,0.14) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -62,7 +62,7 @@ export function Hero() {
               fontSize: `${fromSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              color: "#f5f5f5",
+              color: "#201815",
               whiteSpace: "nowrap",
               userSelect: "none",
             }}
@@ -83,7 +83,7 @@ export function Hero() {
               fontSize: `${insightSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              background: "linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)",
+              background: "linear-gradient(135deg, #f44250 0%, #ff8a7a 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -107,7 +107,7 @@ export function Hero() {
               fontFamily: "Syne, sans-serif",
               fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
               fontWeight: 700,
-              color: "#f5f5f5",
+              color: "#201815",
               marginBottom: "0.5rem",
             }}
           >
@@ -117,13 +117,13 @@ export function Hero() {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
-              color: "#888888",
+              color: "#6f625c",
               lineHeight: 1.7,
             }}
           >
-            실전 핀테크 창업 경험과 학문적 깊이를 결합한 AI 교육.
+            실전 핀테크 창업 경험과 학문적 깊이를 결합한 AI 컨설팅
             <br />
-            현장에서 쓰이는 기술을 직접 가르칩니다.
+            현장에서 쓰이는 기술을 직접 알려드립니다.
           </p>
         </motion.div>
 
@@ -133,7 +133,36 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
           style={{ display: "flex", gap: "1rem", marginTop: "2.5rem", flexWrap: "wrap" }}
-        >
+        >          
+          <a
+            href="#services"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              padding: "0.75rem 1.75rem",
+              border: "1px solid #f1c9c3",
+              color: "#201815",
+              fontFamily: "Inter, sans-serif",
+              fontWeight: 600,
+              fontSize: "0.95rem",
+              borderRadius: "999px",
+              textDecoration: "none",
+              transition: "border-color 0.2s, transform 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "#f44250";
+              e.currentTarget.style.background = "rgba(244,66,80,0.06)";
+              e.currentTarget.style.transform = "translateY(-1px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "#f1c9c3";
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            프로그램 살펴보기
+          </a>
+
           <a
             href="https://discord.com/invite/TKQn6RWaGX"
             target="_blank"
@@ -143,8 +172,9 @@ export function Hero() {
               alignItems: "center",
               gap: "0.5rem",
               padding: "0.75rem 1.75rem",
-              background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
-              color: "#fff",
+              background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+              border: "1px solid transparent",
+              color: "#fffdfb",
               fontFamily: "Inter, sans-serif",
               fontWeight: 600,
               fontSize: "0.95rem",
@@ -163,72 +193,9 @@ export function Hero() {
           >
             커뮤니티 참여하기 →
           </a>
-          <a
-            href="#services"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "0.75rem 1.75rem",
-              border: "1px solid #1f1f1f",
-              color: "#f5f5f5",
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
-              fontSize: "0.95rem",
-              borderRadius: "999px",
-              textDecoration: "none",
-              transition: "border-color 0.2s, transform 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#888888";
-              e.currentTarget.style.transform = "translateY(-1px)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "#1f1f1f";
-              e.currentTarget.style.transform = "translateY(0)";
-            }}
-          >
-            프로그램 살펴보기
-          </a>
         </motion.div>
       </div>
-
-      {/* Scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        style={{
-          position: "absolute",
-          bottom: "2.5rem",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0.4rem",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "0.7rem",
-            color: "#444",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-          }}
-        >
-          scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-          style={{
-            width: "1px",
-            height: "32px",
-            background: "linear-gradient(to bottom, #444, transparent)",
-          }}
-        />
-      </motion.div>
+      
     </section>
   );
 }

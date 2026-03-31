@@ -4,7 +4,7 @@ import { Hero } from "~/components/Hero";
 import { Marquee } from "~/components/Marquee";
 import { Services } from "~/components/Services";
 import { Story } from "~/components/Story";
-import { Team } from "~/components/Team";
+import { Experts } from "~/components/Experts";
 import { Community } from "~/components/Community";
 import { Footer } from "~/components/Footer";
 
@@ -21,13 +21,13 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div style={{ background: "#080808", minHeight: "100vh" }}>
+    <div style={{ minHeight: "100vh" }}>
       <Nav />
       <Hero />
       <Marquee />
       <Services />
       <Story />
-      <Team />
+      <Experts />
       <Community />
       <Footer />
     </div>

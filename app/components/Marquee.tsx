@@ -19,11 +19,11 @@ export function Marquee() {
   return (
     <div
       style={{
-        borderTop: "1px solid #1f1f1f",
-        borderBottom: "1px solid #1f1f1f",
+        borderTop: "1px solid #ecdcd5",
+        borderBottom: "1px solid #ecdcd5",
         padding: "1rem 0",
         overflow: "hidden",
-        background: "#0d0d0d",
+        background: "rgba(255,255,255,0.55)",
       }}
     >
       <div
@@ -46,14 +46,14 @@ export function Marquee() {
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "0.75rem",
               fontWeight: 500,
-              color: "#444444",
+              color: "#8f7d77",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               whiteSpace: "nowrap",
             }}
           >
             {tag}
-            <span style={{ color: "#1f1f1f", fontSize: "1rem" }}>·</span>
+            <span style={{ color: "#d9bdb6", fontSize: "1rem" }}>·</span>
           </span>
         ))}
       </div>

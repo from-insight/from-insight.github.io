@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import logoImage from "~/welcome/frominsight_ci.png";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,9 +27,9 @@ export function Nav() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: scrolled ? "rgba(8,8,8,0.85)" : "transparent",
+        backgroundColor: scrolled ? "rgba(255,250,246,0.9)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid #1f1f1f" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid #ecdcd5" : "1px solid transparent",
         transition: "background-color 0.3s, backdrop-filter 0.3s, border-color 0.3s",
       }}
     >
@@ -36,23 +37,41 @@ export function Nav() {
       <a
         href="#hero"
         style={{
-          fontFamily: "Syne, sans-serif",
-          fontWeight: 800,
-          fontSize: "1.1rem",
-          letterSpacing: "-0.02em",
-          color: "#f5f5f5",
           textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.55rem",
         }}
       >
-        from<span style={{ color: "#7c3aed" }}>-</span>insight
+        <img
+          src={logoImage}
+          alt="from-insight"
+          style={{
+            display: "block",
+            height: "26px",
+            width: "auto",
+          }}
+        />
+        <span
+          style={{
+            fontFamily: "Syne, sans-serif",
+            fontWeight: 600,
+            fontSize: "1rem",
+            letterSpacing: "-0.03em",
+            lineHeight: 1,
+            color: "#201815",
+          }}
+        >
+          from<span style={{ color: "#f44250" }}>-</span>insight
+        </span>
       </a>
 
       {/* Links */}
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {[
-          { label: "Services", href: "#services" },
-          { label: "About", href: "#story" },
-          { label: "Community", href: "#community" },
+          { label: "In Practice", href: "#services" },
+          { label: "Proven", href: "#story" },
+          { label: "Experts", href: "#experts" },
         ].map(({ label, href }) => (
           <a
             key={href}
@@ -60,17 +79,18 @@ export function Nav() {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "0.875rem",
-              color: "#888888",
+              fontWeight: 600,
+              color: "#6f625c", 
               textDecoration: "none",
-              transition: "color 0.2s",
+              transition: "color 0.3s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f5f5")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#888888")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#201815")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#6f625c")}
           >
             {label}
           </a>
         ))}
-        <a
+        {/* <a
           href="https://discord.com/invite/TKQn6RWaGX"
           target="_blank"
           rel="noreferrer"
@@ -78,25 +98,25 @@ export function Nav() {
             fontFamily: "Inter, sans-serif",
             fontSize: "0.875rem",
             fontWeight: 600,
-            color: "#f5f5f5",
+            color: "#201815",
             textDecoration: "none",
             padding: "0.4rem 1rem",
-            border: "1px solid #1f1f1f",
+            border: "1px solid #ecdcd5",
             borderRadius: "999px",
-            background: "transparent",
+            background: "rgba(255,255,255,0.72)",
             transition: "border-color 0.2s, background 0.2s",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#7c3aed";
-            e.currentTarget.style.background = "rgba(124,58,237,0.1)";
+            e.currentTarget.style.borderColor = "#f44250";
+            e.currentTarget.style.background = "rgba(244,66,80,0.08)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#1f1f1f";
-            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.borderColor = "#ecdcd5";
+            e.currentTarget.style.background = "rgba(255,255,255,0.72)";
           }}
         >
           Join Discord
-        </a>
+        </a> */}
       </div>
     </motion.nav>
   );

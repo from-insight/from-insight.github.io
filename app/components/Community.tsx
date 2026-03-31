@@ -9,8 +9,8 @@ export function Community() {
       id="community"
       style={{
         padding: "8rem 5vw",
-        background: "#0d0d0d",
-        borderTop: "1px solid #1f1f1f",
+        background: "transparent",
+        borderTop: "1px solid #ecdcd5",
         position: "relative",
         overflow: "hidden",
         textAlign: "center",
@@ -27,7 +27,7 @@ export function Community() {
           width: "800px",
           height: "400px",
           background:
-            "radial-gradient(ellipse, rgba(6,182,212,0.08) 0%, transparent 70%)",
+            "radial-gradient(ellipse, rgba(244,66,80,0.08) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -41,7 +41,7 @@ export function Community() {
           style={{
             fontFamily: "JetBrains Mono, monospace",
             fontSize: "0.75rem",
-            color: "#06b6d4",
+            color: "#f44250",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: "1.5rem",
@@ -64,7 +64,7 @@ export function Community() {
               fontSize: `${joinSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              background: "linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)",
+              background: "linear-gradient(135deg, #f44250 0%, #ff8a7a 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -83,15 +83,15 @@ export function Community() {
           style={{
             fontFamily: "Inter, sans-serif",
             fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
-            color: "#888888",
+            color: "#6f625c",
             lineHeight: 1.7,
             maxWidth: "480px",
             margin: "2rem auto",
           }}
         >
-          Discord 커뮤니티에서 질문하고, 스터디하고, 함께 성장하세요.
+          Discord 커뮤니티에서 질문하고, 체험하면서, 함께 성장하세요.
           <br />
-          강의 외에도 실시간으로 소통할 수 있습니다.
+          실시간으로 소통할 수 있습니다.
         </motion.p>
 
         <motion.a
@@ -107,8 +107,8 @@ export function Community() {
             alignItems: "center",
             gap: "0.6rem",
             padding: "0.9rem 2.5rem",
-            background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
-            color: "#fff",
+            background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+            color: "#fffdfb",
             fontFamily: "Inter, sans-serif",
             fontWeight: 700,
             fontSize: "1rem",

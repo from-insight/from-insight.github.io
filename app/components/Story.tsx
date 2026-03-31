@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "SNU", label: "공학박사\nSeoul Nat'l Univ." },
   { value: "Expert", label: "핀테크 스타트업\n 창업, 합병 경력" },
-  { value: "15+", label: "년 금융 IT\n업계 경력" },
-  { value: "AI", label: "교육 전문\n신생 스타트업" },
+  { value: "AI", label: "컨설팅 전문\n신생 스타트업" },
+  { value: "15+", label: "년 금융 IT\n업계 경력" },  
+  { value: "SNU", label: "공학박사\nSeoul Nat'l Univ." },  
 ];
 
 export function Story() {
@@ -13,8 +13,8 @@ export function Story() {
       id="story"
       style={{
         padding: "8rem 5vw",
-        background: "#0d0d0d",
-        borderTop: "1px solid #1f1f1f",
+        background: "transparent",
+        borderTop: "1px solid #ecdcd5",
       }}
     >
       <div
@@ -38,13 +38,13 @@ export function Story() {
             style={{
               fontFamily: "JetBrains Mono, monospace",
               fontSize: "0.75rem",
-              color: "#7c3aed",
+              color: "#f44250",
               letterSpacing: "0.15em",
               textTransform: "uppercase",
               marginBottom: "1rem",
             }}
           >
-            Why From-Insight
+            Proven Depth 
           </p>
           <h2
             style={{
@@ -52,22 +52,22 @@ export function Story() {
               fontWeight: 800,
               fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
               letterSpacing: "-0.03em",
-              color: "#f5f5f5",
+              color: "#201815",
               lineHeight: 1.15,
               marginBottom: "2rem",
             }}
           >
-            경험에서 비롯된
+            경험에서 비롯한
             <br />
             <span
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
+                background: "linear-gradient(135deg, #f44250, #ff8a7a)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              진짜 교육
+              생생한 경험
             </span>
           </h2>
           <div
@@ -78,16 +78,16 @@ export function Story() {
             }}
           >
             {[
-              "from-insight는 핀테크 스타트업을 창업하고 합병하는 과정에서 체득한 실전 경험을 교육으로 나누기 위해 만들어진 회사입니다.",
-              "서울대학교 공학박사 출신의 대표가 파생상품 가격결정 엔진 개발, 퀀트 운용, 기업 리스크 관리를 직접 경험하며 쌓은 지식을 커리큘럼에 담았습니다.",
-              "회계사인 정원준 파이어니어와 함께, 금융과 기술이 만나는 지점에서 실질적으로 쓰이는 기술을 가르칩니다.",
+              "from-insight는 핀테크 스타트업을 창업하고 합병하는 과정에서 체득한 실전 경험을 다양한 그룹과 나누기 위해 만들어진 회사입니다.",
+              "회계사 개발자 파이어니어와 함께, 금융과 기술이 만나는 지점에서 실질적으로 쓰이는 기술을 연구합니다.",
+              "서울대학교 공학박사 출신 대표가 다양한 산업과 기술을 깊이있게 접목한 경험을 기반으로 전문지식을 - 파생상품 가격결정 엔진, 퀀트 기반 기업 리스크 관리 - 누구나 다가가기 쉽게 다룹니다.",
             ].map((text, i) => (
               <p
                 key={i}
                 style={{
                   fontFamily: "Inter, sans-serif",
                   fontSize: "1rem",
-                  color: "#888888",
+                  color: "#6f625c",
                   lineHeight: 1.75,
                 }}
               >
@@ -107,15 +107,15 @@ export function Story() {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "1px",
-            background: "#1f1f1f",
-            border: "1px solid #1f1f1f",
+            background: "#ecdcd5",
+            border: "1px solid #ecdcd5",
           }}
         >
           {stats.map(({ value, label }) => (
             <div
               key={value}
               style={{
-                background: "#0d0d0d",
+                background: "rgba(255,255,255,0.76)",
                 padding: "2.5rem 1.5rem",
                 display: "flex",
                 flexDirection: "column",
@@ -128,7 +128,7 @@ export function Story() {
                   fontWeight: 900,
                   fontSize: "clamp(2rem, 4vw, 3rem)",
                   letterSpacing: "-0.04em",
-                  background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
+                  background: "linear-gradient(135deg, #f44250, #ff8a7a)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -140,7 +140,7 @@ export function Story() {
                 style={{
                   fontFamily: "Inter, sans-serif",
                   fontSize: "0.8rem",
-                  color: "#666",
+                  color: "#7d6d67",
                   lineHeight: 1.5,
                   whiteSpace: "pre-line",
                 }}
