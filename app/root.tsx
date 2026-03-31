@@ -25,12 +25,35 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: "프롬인사이트",
+                  alternateName: ["from-insight", "from insight", "frominsight"],
+                  url: "https://www.from-insight.com/",
+                  logo: "https://www.from-insight.com/frominsight_ci.png",
+                },
+                {
+                  "@type": "WebSite",
+                  name: "프롬인사이트",
+                  alternateName: ["from-insight", "from insight", "frominsight"],
+                  url: "https://www.from-insight.com/",
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body>
         {children}

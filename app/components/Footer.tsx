@@ -56,6 +56,16 @@ export function Footer() {
         >
           &copy; 2026 from-insight corp. All rights reserved.
         </p>
+        <p
+          style={{
+            fontFamily: "Inter, sans-serif",
+            fontSize: "0.72rem",
+            color: "#a18f88",
+            marginTop: "0.25rem",
+          }}
+        >
+          프롬인사이트 · from-insight · from insight · frominsight
+        </p>
       </div>
 
       <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>

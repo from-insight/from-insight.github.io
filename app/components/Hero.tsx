@@ -137,7 +137,7 @@ export function Hero() {
               marginBottom: "0.5rem",
             }}
           >
-            인사이트에서 인텔리전스로
+            프롬인사이트, 인사이트에서 인텔리전스로
           </p>
           <p
             style={{
