@@ -6,12 +6,6 @@
   "installCommand": "npm ci",
   "framework": null,
 
-  "functions": {
-    "build/server/**": {
-      "maxDuration": 10
-    }
-  },
-
   "headers": [
     {
       "source": "/(.*)",
