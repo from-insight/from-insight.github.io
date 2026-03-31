@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(npx create-react-router@latest . --template remix --yes)",
-      "Bash(npx create-react-router@latest . --yes)"
+      "Bash(npx create-react-router@latest . --yes)",
+      "Bash(npm install:*)",
+      "Bash(npx react-router:*)",
+      "Bash(npx tsc:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm list:*)",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)"
     ]
   }
 }
