@@ -9,20 +9,15 @@ import { Community } from "~/components/Community";
 import { Footer } from "~/components/Footer";
 
 export function meta({}: Route.MetaArgs) {
-  const title = "프롬인사이트 | from-insight | AI Education, FinTech Practice, Generative AI Consulting";
+  const title = "생성형 AI·실무 교육과 컨설팅 | 프롬인사이트";
   const description =
-    "프롬인사이트(from-insight, from insight, frominsight)는 실전 핀테크 창업 경험과 학문적 깊이를 결합한 AI 교육 및 컨설팅 브랜드입니다. 프론트엔드, 핀테크, 머신러닝, 생성형 AI 컨설팅을 제공합니다.";
+    "프롬인사이트(from-insight)는 업무 현장에서 검증된 핀테크 실무 경험과 서울대 공학박사와 회계사의 학문적 깊이를 결합한 AI 교육·컨설팅 브랜드입니다. 생성형 AI 도입 컨설팅, 최적화·머신러닝·핀테크 실무 교육을 제공합니다.";
   const url = "https://www.from-insight.com/";
-
   return [
     { title },
     {
       name: "description",
       content: description,
-    },
-    {
-      name: "keywords",
-      content: "프롬인사이트, from-insight, from insight, frominsight, AI 교육, 생성형 AI 컨설팅, 핀테크 컨설팅",
     },
     { name: "robots", content: "index, follow" },
     { tagName: "link", rel: "canonical", href: url },
