@@ -3,8 +3,13 @@ import { motion } from "framer-motion";
 import logoImage from "~/welcome/frominsight_ci.png";
 
 export function Hero() {
-  const fromSize = useViewportText("FROM", "Syne", "900", 0.88);
-  const insightSize = useViewportText("INSIGHT", "Syne", "900", 0.88);
+  // F keeps the full headline size; ROM is scaled down and sits on F's cap line.
+  const fromSize = useViewportText("FROM", "DM Sans", "700", 0.88);
+  const insightSize = useViewportText("INSIGHT", "DM Sans", "700", 0.88);
+  const romScale = 0.42;
+  // DM Sans: cap top sits ~0.141em below a line-height:1 box top; offset the
+  // smaller ROM box so both cap lines coincide.
+  const romOffset = fromSize * 0.141 * (1 - romScale);
 
   return (
     <section
@@ -20,35 +25,6 @@ export function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Subtle grid background */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(236,220,213,0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(236,220,213,0.75) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
-        }}
-      />
-
-      {/* Accent glow */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: "20%",
-          left: "10%",
-          width: "600px",
-          height: "400px",
-          background:
-            "radial-gradient(ellipse, rgba(244,66,80,0.14) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
       <div style={{ position: "relative", zIndex: 1, width: "100%" }}>
         {/* Canvas-fill headline — each word fills viewport width */}
         <motion.div
@@ -80,18 +56,31 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div
+            role="img"
+            aria-label="FROM"
             style={{
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 900,
-              fontSize: `${fromSize}px`,
-              lineHeight: 0.95,
+              display: "flex",
+              alignItems: "flex-start",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
+              lineHeight: 1,
               letterSpacing: "-0.03em",
-              color: "#201815",
+              color: "#191E28",
               whiteSpace: "nowrap",
               userSelect: "none",
             }}
           >
-            FROM
+            <span aria-hidden style={{ fontSize: `${fromSize}px` }}>F</span>
+            <span
+              aria-hidden
+              style={{
+                fontSize: `${fromSize * romScale}px`,
+                marginTop: `${romOffset}px`,
+                marginLeft: "0.04em",
+              }}
+            >
+              R<span style={{ color: "#f44250" }}>O</span>M
+            </span>
           </div>
         </motion.div>
 
@@ -104,12 +93,12 @@ export function Hero() {
             style={{
               display: "inline-block",
               width: "max-content",
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 900,
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
               fontSize: `${insightSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              background: "linear-gradient(135deg, #f44250 0%, #ff8a7a 100%)",
+              background: "#191E28",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -130,10 +119,10 @@ export function Hero() {
         >
           <p
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
               fontWeight: 700,
-              color: "#201815",
+              color: "#191E28",
               marginBottom: "0.5rem",
             }}
           >
@@ -141,9 +130,9 @@ export function Hero() {
           </p>
           <p
             style={{
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
-              color: "#6f625c",
+              color: "#424852",
               lineHeight: 1.7,
             }}
           >
@@ -166,22 +155,22 @@ export function Hero() {
               display: "inline-flex",
               alignItems: "center",
               padding: "0.75rem 1.75rem",
-              border: "1px solid #f1c9c3",
-              color: "#201815",
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
+              border: "1px solid #CED1D7",
+              color: "#191E28",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 500,
               fontSize: "0.95rem",
-              borderRadius: "999px",
+              borderRadius: "7px",
               textDecoration: "none",
               transition: "border-color 0.2s, transform 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#f44250";
-              e.currentTarget.style.background = "rgba(244,66,80,0.06)";
+              e.currentTarget.style.borderColor = "#191E28";
+              e.currentTarget.style.background = "#E9EBEF";
               e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "#f1c9c3";
+              e.currentTarget.style.borderColor = "#CED1D7";
               e.currentTarget.style.background = "transparent";
               e.currentTarget.style.transform = "translateY(0)";
             }}
@@ -198,22 +187,22 @@ export function Hero() {
               alignItems: "center",
               gap: "0.5rem",
               padding: "0.75rem 1.75rem",
-              background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+              background: "#191E28",
               border: "1px solid transparent",
-              color: "#fffdfb",
-              fontFamily: "Inter, sans-serif",
-              fontWeight: 600,
+              color: "#FFFFFF",
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 500,
               fontSize: "0.95rem",
-              borderRadius: "999px",
+              borderRadius: "7px",
               textDecoration: "none",
-              transition: "opacity 0.2s, transform 0.2s",
+              transition: "background 0.2s, transform 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = "0.85";
+              e.currentTarget.style.background = "#2C333F";
               e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = "1";
+              e.currentTarget.style.background = "#191E28";
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >

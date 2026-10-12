@@ -71,11 +71,11 @@ export function Services() {
         </p>
         <h2
           style={{
-            fontFamily: "Syne, sans-serif",
-            fontWeight: 800,
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(2rem, 5vw, 3.5rem)",
             letterSpacing: "-0.03em",
-            color: "#201815",
+            color: "#191E28",
             lineHeight: 1.1,
           }}
         >
@@ -95,8 +95,8 @@ export function Services() {
         style={{
           display: "grid",
           gap: "1px",
-          background: "#ecdcd5",
-          border: "1px solid #ecdcd5",
+          background: "#DDE0E4",
+          border: "1px solid #DDE0E4",
         }}
       >
         {services.map((s) => (
@@ -104,7 +104,7 @@ export function Services() {
             key={s.num}
             variants={cardVariants}
             style={{
-              background: "rgba(255,255,255,0.78)",
+              background: "#FFFFFF",
               padding: "2.5rem 2rem",
               display: "flex",
               flexDirection: "column",
@@ -112,13 +112,13 @@ export function Services() {
               cursor: "default",
               transition: "background 0.2s",
             }}
-            whileHover={{ backgroundColor: "#fff3ef" }}
+            whileHover={{ backgroundColor: "#F3F4F7" }}
           >
             <span
               style={{
                 fontFamily: "JetBrains Mono, monospace",
                 fontSize: "0.7rem",
-                color: "#9d8a83",
+                color: "#696E76",
                 letterSpacing: "0.1em",
               }}
             >
@@ -127,11 +127,11 @@ export function Services() {
             <div>
               <h3
                 style={{
-                  fontFamily: "Syne, sans-serif",
-                  fontWeight: 800,
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
                   fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
                   letterSpacing: "-0.02em",
-                  color: "#201815",
+                  color: "#191E28",
                   lineHeight: 1.1,
                   whiteSpace: "pre-line",
                   marginBottom: "0.4rem",
@@ -141,9 +141,9 @@ export function Services() {
               </h3>
               <p
                 style={{
-                  fontFamily: "Inter, sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.8rem",
-                  color: "#f44250",
+                  color: "#424852",
                   fontWeight: 500,
                 }}
               >
@@ -152,9 +152,9 @@ export function Services() {
             </div>
             <p
               style={{
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.9rem",
-                color: "#6f625c",
+                color: "#424852",
                 lineHeight: 1.7,
                 flexGrow: 1,
               }}
@@ -168,8 +168,8 @@ export function Services() {
                   style={{
                     fontFamily: "JetBrains Mono, monospace",
                     fontSize: "0.65rem",
-                    color: "#8a7771",
-                    border: "1px solid #ecdcd5",
+                    color: "#696E76",
+                    border: "1px solid #DDE0E4",
                     padding: "0.2rem 0.6rem",
                     borderRadius: "4px",
                     letterSpacing: "0.05em",

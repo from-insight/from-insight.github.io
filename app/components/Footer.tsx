@@ -5,8 +5,8 @@ export function Footer() {
     <footer
       style={{
         padding: "1.7rem 4vw",
-        borderTop: "1px solid #ecdcd5",
-        background: "rgba(255,255,255,0.55)",
+        borderTop: "1px solid #DDE0E4",
+        background: "#FFFFFF",
         display: "flex",
         flexWrap: "wrap",
         alignItems: "center",
@@ -35,22 +35,22 @@ export function Footer() {
           />
           <span
             style={{
-              fontFamily: "Syne, sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontWeight: 600,
               fontSize: "1rem",
               letterSpacing: "-0.03em",
               lineHeight: 1,
-              color: "#201815",
+              color: "#191E28",
             }}
           >
-            from<span style={{ color: "#f44250" }}>-</span>insight
+            from<span style={{ color: "#696E76" }}>-</span>insight
           </span>
         </a>
         <p
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.75rem",
-            color: "#8a7771",
+            color: "#696E76",
             marginTop: "0.4rem",
           }}
         >
@@ -58,9 +58,9 @@ export function Footer() {
         </p>
         <p
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.72rem",
-            color: "#a18f88",
+            color: "#9BA1AA",
             marginTop: "0.25rem",
           }}
         >
@@ -80,15 +80,15 @@ export function Footer() {
             target={href.startsWith("http") ? "_blank" : undefined}
             rel={href.startsWith("http") ? "noreferrer" : undefined}
             style={{
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.8rem",
               fontWeight: 700,
-              color: "#8a7771",
+              color: "#696E76",
               textDecoration: "none",
               transition: "color 0.2s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#201815")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7771")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#191E28")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#696E76")}
           >
             {label}
           </a>

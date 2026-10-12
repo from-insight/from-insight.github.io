@@ -26,7 +26,7 @@ export function Experts() {
       style={{
         padding: "8rem 5vw",
         background: "transparent",
-        borderTop: "1px solid #ecdcd5",
+        borderTop: "1px solid #DDE0E4",
       }}
     >
       <motion.div
@@ -50,11 +50,11 @@ export function Experts() {
         </p>
         <h2
           style={{
-            fontFamily: "Syne, sans-serif",
-            fontWeight: 800,
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(2rem, 5vw, 3.5rem)",
             letterSpacing: "-0.03em",
-            color: "#201815",
+            color: "#191E28",
             lineHeight: 1.1,
           }}
         >
@@ -69,8 +69,8 @@ export function Experts() {
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           gap: "1px",
-          background: "#ecdcd5",
-          border: "1px solid #ecdcd5",
+          background: "#DDE0E4",
+          border: "1px solid #DDE0E4",
           maxWidth: "900px",
         }}
       >
@@ -82,7 +82,7 @@ export function Experts() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.15 }}
             style={{
-              background: "rgba(255,255,255,0.78)",
+              background: "#FFFFFF",
               padding: "2.5rem 2rem",
               display: "flex",
               flexDirection: "column",
@@ -95,8 +95,8 @@ export function Experts() {
                 width: "56px",
                 height: "56px",
                 borderRadius: "50%",
-                background: "linear-gradient(135deg, rgba(244,66,80,0.12), rgba(255,138,122,0.18))",
-                border: "1px solid #ecdcd5",
+                background: "#E9EBEF",
+                border: "1px solid #DDE0E4",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -104,10 +104,10 @@ export function Experts() {
             >
               <span
                 style={{
-                  fontFamily: "Syne, sans-serif",
-                  fontWeight: 800,
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
                   fontSize: "1.2rem",
-                  background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+                  background: "#191E28",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -120,11 +120,11 @@ export function Experts() {
             <div>
               <h3
                 style={{
-                  fontFamily: "Syne, sans-serif",
-                  fontWeight: 800,
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
                   fontSize: "1.4rem",
                   letterSpacing: "-0.02em",
-                  color: "#201815",
+                  color: "#191E28",
                   marginBottom: "0.2rem",
                 }}
               >
@@ -134,7 +134,7 @@ export function Experts() {
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
                   fontSize: "0.7rem",
-                  color: "#f44250",
+                  color: "#696E76",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -144,9 +144,9 @@ export function Experts() {
 
             <p
               style={{
-                fontFamily: "Inter, sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.875rem",
-                color: "#6f625c",
+                color: "#424852",
                 lineHeight: 1.7,
               }}
             >
@@ -160,8 +160,8 @@ export function Experts() {
                   style={{
                     fontFamily: "JetBrains Mono, monospace",
                     fontSize: "0.65rem",
-                    color: "#8a7771",
-                    border: "1px solid #ecdcd5",
+                    color: "#696E76",
+                    border: "1px solid #DDE0E4",
                     padding: "0.2rem 0.6rem",
                     borderRadius: "4px",
                     letterSpacing: "0.05em",
@@ -178,17 +178,17 @@ export function Experts() {
                 target="_blank"
                 rel="noreferrer"
                 style={{
-                  fontFamily: "Inter, sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.8rem",
-                  color: "#8a7771",
+                  color: "#696E76",
                   textDecoration: "none",
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.3rem",
                   transition: "color 0.2s",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#201815")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#8a7771")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#191E28")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#696E76")}
               >
                 프로필 보기 →
               </a>

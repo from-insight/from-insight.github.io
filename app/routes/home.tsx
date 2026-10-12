@@ -7,6 +7,7 @@ import { Story } from "~/components/Story";
 import { Experts } from "~/components/Experts";
 import { Community } from "~/components/Community";
 import { Footer } from "~/components/Footer";
+import { StarfieldBackground } from "~/components/StarfieldBackground";
 
 export function meta({}: Route.MetaArgs) {
   const title = "생성형 AI·실무 교육과 컨설팅 | 프롬인사이트";
@@ -41,7 +42,9 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <>
+      <StarfieldBackground />
+      <div style={{ position: "relative", zIndex: 1, minHeight: "100vh" }}>
       <Nav />
       <Hero />
       <Marquee />
@@ -50,6 +53,7 @@ export default function Home() {
       <Experts />
       <Community />
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

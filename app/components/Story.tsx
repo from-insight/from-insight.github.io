@@ -14,7 +14,7 @@ export function Story() {
       style={{
         padding: "8rem 5vw",
         background: "transparent",
-        borderTop: "1px solid #ecdcd5",
+        borderTop: "1px solid #DDE0E4",
       }}
     >
       <div
@@ -48,11 +48,11 @@ export function Story() {
           </p>
           <h2
             style={{
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 800,
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
               fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
               letterSpacing: "-0.03em",
-              color: "#201815",
+              color: "#191E28",
               lineHeight: 1.15,
               marginBottom: "2rem",
             }}
@@ -61,7 +61,7 @@ export function Story() {
             <br />
             <span
               style={{
-                background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+                background: "#191E28",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -85,9 +85,9 @@ export function Story() {
               <p
                 key={i}
                 style={{
-                  fontFamily: "Inter, sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "1rem",
-                  color: "#6f625c",
+                  color: "#424852",
                   lineHeight: 1.75,
                 }}
               >
@@ -108,15 +108,15 @@ export function Story() {
             gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
             gap: "1px",
             minWidth: 0,
-            background: "#ecdcd5",
-            border: "1px solid #ecdcd5",
+            background: "#DDE0E4",
+            border: "1px solid #DDE0E4",
           }}
         >
           {stats.map(({ value, label }) => (
             <div
               key={value}
               style={{
-                background: "rgba(255,255,255,0.76)",
+                background: "#FFFFFF",
                 padding: "clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem)",
                 minWidth: 0,
                 display: "flex",
@@ -126,11 +126,11 @@ export function Story() {
             >
               <span
                 style={{
-                  fontFamily: "Syne, sans-serif",
-                  fontWeight: 900,
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 700,
                   fontSize: "clamp(1.5rem, 4vw, 3rem)",
                   letterSpacing: "-0.04em",
-                  background: "linear-gradient(135deg, #f44250, #ff8a7a)",
+                  background: "#191E28",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -140,9 +140,9 @@ export function Story() {
               </span>
               <span
                 style={{
-                  fontFamily: "Inter, sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.8rem",
-                  color: "#7d6d67",
+                  color: "#696E76",
                   lineHeight: 1.5,
                   whiteSpace: "pre-line",
                 }}

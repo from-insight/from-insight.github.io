@@ -26,9 +26,9 @@ export function Nav() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: scrolled ? "rgba(255,250,246,0.9)" : "transparent",
+        backgroundColor: scrolled ? "rgba(243,244,247,0.9)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid #ecdcd5" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid #DDE0E4" : "1px solid transparent",
         transition: "background-color 0.3s, backdrop-filter 0.3s, border-color 0.3s",
       }}
     >
@@ -45,15 +45,15 @@ export function Nav() {
         
         <span
           style={{
-            fontFamily: "Syne, sans-serif",
-            fontWeight: 600,
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 500,
             fontSize: "1rem",
             letterSpacing: "-0.03em",
             lineHeight: 1,
-            color: "#201815",
+            color: "#191E28",
           }}
         >
-          from<span style={{ color: "#f44250" }}>-</span>insight
+          from<span style={{ color: "#696E76" }}>-</span>insight
         </span>
       </a>
 
@@ -68,15 +68,15 @@ export function Nav() {
             key={href}
             href={href}
             style={{
-              fontFamily: "Inter, sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.875rem",
               fontWeight: 600,
-              color: "#6f625c", 
+              color: "#424852", 
               textDecoration: "none",
               transition: "color 0.3s",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#201815")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#6f625c")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#191E28")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#424852")}
           >
             {label}
           </a>
@@ -86,24 +86,24 @@ export function Nav() {
           target="_blank"
           rel="noreferrer"
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "0.875rem",
             fontWeight: 600,
-            color: "#201815",
+            color: "#191E28",
             textDecoration: "none",
             padding: "0.4rem 1rem",
-            border: "1px solid #ecdcd5",
-            borderRadius: "999px",
-            background: "rgba(255,255,255,0.72)",
+            border: "1px solid #DDE0E4",
+            borderRadius: "7px",
+            background: "#FFFFFF",
             transition: "border-color 0.2s, background 0.2s",
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#f44250";
-            e.currentTarget.style.background = "rgba(244,66,80,0.08)";
+            e.currentTarget.style.borderColor = "#191E28";
+            e.currentTarget.style.background = "#E9EBEF";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#ecdcd5";
-            e.currentTarget.style.background = "rgba(255,255,255,0.72)";
+            e.currentTarget.style.borderColor = "#DDE0E4";
+            e.currentTarget.style.background = "#FFFFFF";
           }}
         >
           Join Discord

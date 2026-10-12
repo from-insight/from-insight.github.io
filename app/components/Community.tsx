@@ -10,28 +10,12 @@ export function Community() {
       style={{
         padding: "8rem 5vw",
         background: "transparent",
-        borderTop: "1px solid #ecdcd5",
+        borderTop: "1px solid #DDE0E4",
         position: "relative",
         overflow: "hidden",
         textAlign: "center",
       }}
     >
-      {/* Glow */}
-      <div
-        aria-hidden
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "800px",
-          height: "400px",
-          background:
-            "radial-gradient(ellipse, rgba(244,66,80,0.08) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
       <div style={{ position: "relative", zIndex: 1 }}>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -41,7 +25,7 @@ export function Community() {
           style={{
             fontFamily: "JetBrains Mono, monospace",
             fontSize: "0.75rem",
-            color: "#9053e6",
+            color: "#f44250",
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             marginBottom: "1.5rem",
@@ -61,12 +45,12 @@ export function Community() {
             style={{
               display: "inline-block",
               width: "max-content",
-              fontFamily: "Syne, sans-serif",
-              fontWeight: 900,
+              fontFamily: "'DM Sans', sans-serif",
+              fontWeight: 700,
               fontSize: `${joinSize}px`,
               lineHeight: 0.95,
               letterSpacing: "-0.03em",
-              background: "linear-gradient(135deg, #592e94 20%, #9053e6 90%)",
+              background: "#191E28",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -83,9 +67,9 @@ export function Community() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{
-            fontFamily: "Inter, sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)",
-            color: "#6f625c",
+            color: "#424852",
             lineHeight: 1.7,
             maxWidth: "480px",
             margin: "2rem auto",
@@ -109,16 +93,16 @@ export function Community() {
             alignItems: "center",
             gap: "0.6rem",
             padding: "0.9rem 2.5rem",
-            background: "linear-gradient(135deg, #4f1e93 20%, #9053e6 90%)",
-            color: "#fffdfb",
-            fontFamily: "Inter, sans-serif",
-            fontWeight: 700,
+            background: "#191E28",
+            color: "#FFFFFF",
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 500,
             fontSize: "1rem",
-            borderRadius: "999px",
+            borderRadius: "7px",
             textDecoration: "none",
             transition: "opacity 0.2s, transform 0.2s",
           }}
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.03, backgroundColor: "#2C333F" }}
           whileTap={{ scale: 0.98 }}
         >
           {/* Discord icon */}
