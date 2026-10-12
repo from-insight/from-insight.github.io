@@ -1,15 +1,22 @@
-import { useViewportText } from "~/hooks/useViewportText";
+import { useHeadlineFit } from "~/hooks/useHeadlineFit";
 import { motion } from "framer-motion";
 import logoImage from "~/welcome/frominsight_ci.png";
 
 export function Hero() {
-  // F keeps the full headline size; ROM is scaled down and sits on F's cap line.
-  const fromSize = useViewportText("FROM", "DM Sans", "700", 0.88);
-  const insightSize = useViewportText("INSIGHT", "DM Sans", "700", 0.88);
-  const romScale = 0.42;
-  // DM Sans: cap top sits ~0.141em below a line-height:1 box top; offset the
-  // smaller ROM box so both cap lines coincide.
-  const romOffset = fromSize * 0.141 * (1 - romScale);
+  // "FROM INSIGHT" fills the viewport width the way "JOIN US" does: one line
+  // on web, wrapping to two centered lines on narrow screens.
+  const romScale = 0.42; // ROM and INSIGHT share this smaller size
+  const gapEm = 0.34; // space between ROM and INSIGHT, in small-type em
+  const { rowRef, line1Ref, line2Ref, size, twoLine } = useHeadlineFit(
+    romScale,
+    0.86,
+    760,
+    gapEm
+  );
+  // DM Sans: cap top sits ~0.141em below a line-height:1 box top. Offset the
+  // smaller type so its cap line meets F's, expressed in its own em so it
+  // scales with the row.
+  const capOffsetEm = (0.141 * (1 - romScale)) / romScale;
 
   return (
     <section
@@ -50,65 +57,76 @@ export function Hero() {
         </motion.div>
         
         
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        {/* One line on web; wraps to two centered lines below 760px. */}
+        <div
+          ref={rowRef}
+          role="img"
+          aria-label="FROM INSIGHT"
+          style={{
+            display: "flex",
+            // Line count follows the breakpoint, not the measured fit, so a
+            // sub-pixel drift can never wrap the web layout.
+            flexWrap: twoLine ? "wrap" : "nowrap",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            width: "100%",
+            fontSize: `${size}px`,
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
+            lineHeight: 1,
+            letterSpacing: "-0.03em",
+            color: "#191E28",
+            userSelect: "none",
+          }}
         >
-          <div
-            role="img"
-            aria-label="FROM"
+          <motion.span
+            aria-hidden
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             style={{
               display: "flex",
-              alignItems: "flex-start",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 700,
-              lineHeight: 1,
-              letterSpacing: "-0.03em",
-              color: "#191E28",
-              whiteSpace: "nowrap",
-              userSelect: "none",
+              justifyContent: "center",
+              flexBasis: twoLine ? "100%" : "auto",
             }}
           >
-            <span aria-hidden style={{ fontSize: `${fromSize}px` }}>F</span>
+            {/* Shrinks to content so the fit hook can measure it. */}
             <span
-              aria-hidden
-              style={{
-                fontSize: `${fromSize * romScale}px`,
-                marginTop: `${romOffset}px`,
-                marginLeft: "0.04em",
-              }}
+              ref={line1Ref}
+              style={{ display: "flex", alignItems: "flex-start", whiteSpace: "nowrap" }}
             >
-              R<span style={{ color: "#f44250" }}>O</span>M
+              <span style={{ fontSize: "1em" }}>F</span>
+              <span
+                style={{
+                  fontSize: `${romScale}em`,
+                  marginTop: `${capOffsetEm}em`,
+                  marginLeft: "0.04em",
+                }}
+              >
+                R<span style={{ color: "#f44250" }}>O</span>M
+              </span>
             </span>
-          </div>
-        </motion.div>
+          </motion.span>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div
+          <motion.span
+            aria-hidden
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              display: "inline-block",
-              width: "max-content",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: `${insightSize}px`,
-              lineHeight: 0.95,
-              letterSpacing: "-0.03em",
-              background: "#191E28",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-              whiteSpace: "nowrap",
-              userSelect: "none",
+              display: "flex",
+              justifyContent: "center",
+              flexBasis: twoLine ? "100%" : "auto",
+              fontSize: `${romScale}em`,
+              marginTop: twoLine ? "0.1em" : `${capOffsetEm}em`,
+              marginLeft: twoLine ? 0 : `${gapEm}em`,
             }}
           >
-            INSIGHT
-          </div>
-        </motion.div>        
+            <span ref={line2Ref} style={{ whiteSpace: "nowrap" }}>
+              INSIGHT
+            </span>
+          </motion.span>
+        </div>        
 
         {/* Subtitle */}
         <motion.div

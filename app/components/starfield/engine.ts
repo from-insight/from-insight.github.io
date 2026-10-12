@@ -75,7 +75,7 @@ const LINK_RADIUS = 70;
 const LINK_RADIUS_SQ = LINK_RADIUS * LINK_RADIUS;
 const STAR_SIZE = [13, 15, 18] as const;
 const STAR_SIZE_NARROW = [12, 13, 15] as const;
-const STAR_ALPHA = [0.22, 0.3, 0.38] as const;
+const STAR_ALPHA = [0.32, 0.42, 0.55] as const;
 
 const pickAmbient = makePicker(AMBIENT_POOL);
 const pickStar = makePicker(STAR_POOL);
@@ -86,14 +86,14 @@ export function seedScene(w: number, h: number, cfg: SceneConfig): Scene {
 
   const glyphs: Glyph[] = [];
   for (let i = 0; i < count; i++) {
-    const base = rand(0.1, 0.28);
+    const base = rand(0.22, 0.52);
     glyphs.push({
       ch: pickAmbient(),
       x: rand(-60, w + 60),
       y: rand(-40, h + 40),
       vx: rand(0.06, 0.34) * cfg.speed,
       vy: rand(-0.16, -0.03) * cfg.speed,
-      size: rand(8, 13),
+      size: rand(13, 20),
       alpha: base * 0.45,
       baseAlpha: base,
       color: pickHue(),
@@ -226,7 +226,7 @@ export function draw(ctx: CanvasRenderingContext2D, s: Scene, cfg: SceneConfig):
         if (ddy > LINK_RADIUS || ddy < -LINK_RADIUS) continue;
         const d2 = ddx * ddx + ddy * ddy;
         if (d2 >= LINK_RADIUS_SQ) continue;
-        ctx.strokeStyle = `rgba(105,110,118,${(0.14 * (1 - d2 / LINK_RADIUS_SQ) * fade).toFixed(3)})`;
+        ctx.strokeStyle = `rgba(105,110,118,${(0.22 * (1 - d2 / LINK_RADIUS_SQ) * fade).toFixed(3)})`;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
