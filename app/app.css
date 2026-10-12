@@ -64,6 +64,18 @@ body {
   }
 }
 
+.story-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+}
+
+@media (min-width: 900px) {
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6rem;
+  }
+}
+
 /* Fade-in-up for framer-motion fallback */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(32px); }

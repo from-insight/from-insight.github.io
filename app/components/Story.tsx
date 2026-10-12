@@ -18,17 +18,17 @@ export function Story() {
       }}
     >
       <div
+        className="story-grid"
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "6rem",
           alignItems: "start",
         }}
       >
         {/* Left: text */}
         <motion.div
+          style={{ minWidth: 0 }}
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -105,8 +105,9 @@ export function Story() {
           transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
             gap: "1px",
+            minWidth: 0,
             background: "#ecdcd5",
             border: "1px solid #ecdcd5",
           }}
@@ -116,7 +117,8 @@ export function Story() {
               key={value}
               style={{
                 background: "rgba(255,255,255,0.76)",
-                padding: "2.5rem 1.5rem",
+                padding: "clamp(1.5rem, 5vw, 2.5rem) clamp(1rem, 4vw, 1.5rem)",
+                minWidth: 0,
                 display: "flex",
                 flexDirection: "column",
                 gap: "0.5rem",
@@ -126,7 +128,7 @@ export function Story() {
                 style={{
                   fontFamily: "Syne, sans-serif",
                   fontWeight: 900,
-                  fontSize: "clamp(2rem, 4vw, 3rem)",
+                  fontSize: "clamp(1.5rem, 4vw, 3rem)",
                   letterSpacing: "-0.04em",
                   background: "linear-gradient(135deg, #f44250, #ff8a7a)",
                   WebkitBackgroundClip: "text",
